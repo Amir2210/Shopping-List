@@ -1,5 +1,11 @@
+import { Form } from './cmps/Form'
+
 const App = () => {
-  return <h2>Shopping List</h2>
+  return (
+    <section className='section-center'>
+      <Form />
+    </section>
+  )
 }
 
 export default App
