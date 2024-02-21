@@ -1,11 +1,17 @@
 import { useState } from 'react'
 import { Form } from './cmps/Form'
 import { ToastContainer, toast } from 'react-toastify'
-
+import { nanoid } from 'nanoid';
 const App = () => {
   const [items, setItems] = useState([])
+
   function onAddItem(product) {
-    toast.success('successfully added to the cart')
+  const newProduct ={
+  name: product,
+  completed: false,
+  id: nanoid()
+}
+console.log(newProduct)
   }
   return (
     <section className='section-center'>
