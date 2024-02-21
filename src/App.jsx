@@ -4,8 +4,11 @@ import { ToastContainer, toast } from 'react-toastify'
 import { nanoid } from 'nanoid';
 import { ShoppingListItems } from './cmps/ShoppingListItems';
 const App = () => {
-  const [items, setItems] = useState([])
-  console.log(items)
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem('list')) || [])
+
+  function setLocalStorage(items) {
+    localStorage.setItem('list', JSON.stringify(items))
+  }
   function onAddItem(product) {
     const newProduct = {
       name: product,
@@ -14,6 +17,7 @@ const App = () => {
     }
     const newItems = [...items, newProduct]
     setItems(newItems)
+    setLocalStorage(newItems)
     toast.success('item added to the list')
   }
 
@@ -26,12 +30,14 @@ const App = () => {
       return item
     })
     setItems(newItems)
+    setLocalStorage(newItems)
     toast.success('item status changed')
   }
 
   function onRemoveItem(productId) {
     const newItems = items.filter(item => item.id !== productId)
     setItems(newItems)
+    setLocalStorage(newItems)
     toast.success('item deleted')
   }
 
