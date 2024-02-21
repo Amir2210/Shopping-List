@@ -6,13 +6,16 @@ const App = () => {
   const [items, setItems] = useState([])
 
   function onAddItem(product) {
-  const newProduct ={
-  name: product,
-  completed: false,
-  id: nanoid()
-}
-console.log(newProduct)
+    const newProduct = {
+      name: product,
+      completed: false,
+      id: nanoid()
+    }
+    const newItems = [...items, newProduct]
+    setItems(newItems)
+    toast.success('item added to the list')
   }
+
   return (
     <section className='section-center'>
       <Form onAddItem={onAddItem} />
