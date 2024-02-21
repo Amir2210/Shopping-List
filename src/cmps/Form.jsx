@@ -6,8 +6,10 @@ export function Form({ onAddItem }) {
 
   function handleAddItem(ev) {
     ev.preventDefault()
-    onAddItem(product)
-    setProduct('')
+    if (product) {
+      onAddItem(product)
+      setProduct('')
+    } else alert('pls enter value')
   }
 
   return (
