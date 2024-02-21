@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Form } from './cmps/Form'
 import { ToastContainer, toast } from 'react-toastify'
 import { nanoid } from 'nanoid';
+import { ShoppingListItems } from './cmps/ShoppingListItems';
 const App = () => {
   const [items, setItems] = useState([])
 
@@ -19,6 +20,7 @@ const App = () => {
   return (
     <section className='section-center'>
       <Form onAddItem={onAddItem} />
+      <ShoppingListItems items={items} />
       <ToastContainer position='top-center' />
     </section>
   )
