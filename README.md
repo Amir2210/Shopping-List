@@ -40,3 +40,9 @@ While the current version of the app serves its purpose, there are always opport
 3. Run npm install to install dependencies.
 4. Run npm run dev to start the development server.
 5. Open your browser and navigate to http://localhost:5173 to view the application.
+
+https://github.com/Amir2210/Shopping-List/assets/107459404/227c140e-f2a6-441f-aaa5-59b1a18cab8a
+
+
+![ללא שם](https://github.com/Amir2210/Shopping-List/assets/107459404/e13e844e-7160-4ae0-af92-18774372cd7a)
+
