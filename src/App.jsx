@@ -5,7 +5,7 @@ import { nanoid } from 'nanoid';
 import { ShoppingListItems } from './cmps/ShoppingListItems';
 const App = () => {
   const [items, setItems] = useState([])
-
+  console.log(items)
   function onAddItem(product) {
     const newProduct = {
       name: product,
@@ -17,10 +17,21 @@ const App = () => {
     toast.success('item added to the list')
   }
 
+  function onChangeStatus(productId) {
+    const newItems = items.map(item => {
+      if (item.id === productId) {
+        const newProduct = { ...item, completed: !item.completed }
+        return newProduct
+      }
+      return item
+    })
+    setItems(newItems)
+  }
+
   return (
     <section className='section-center'>
       <Form onAddItem={onAddItem} />
-      <ShoppingListItems items={items} />
+      <ShoppingListItems items={items} onChangeStatus={onChangeStatus} />
       <ToastContainer position='top-center' />
     </section>
   )
