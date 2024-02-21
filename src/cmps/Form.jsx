@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import {toast} from 'react-toastify'
 export function Form({ onAddItem }) {
 
   const [product, setProduct] = useState('')
@@ -8,7 +9,7 @@ export function Form({ onAddItem }) {
     if (product) {
       onAddItem(product)
       setProduct('')
-    } else alert('pls enter value')
+    } else toast.error('please provide value')
   }
 
   return (
