@@ -1,5 +1,11 @@
 export function Form() {
   return (
-    <h1> form</h1>
+    <form >
+      <h4>Shopping List</h4>
+      <div className="form-control">
+        <input className='form-input' type="text" />
+        <button className='btn'>Add Item</button>
+      </div>
+    </form>
   )
 }
