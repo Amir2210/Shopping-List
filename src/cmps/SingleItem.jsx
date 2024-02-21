@@ -1,4 +1,4 @@
-export function SingleItem({ item, onChangeStatus }) {
+export function SingleItem({ item, onChangeStatus, onRemoveItem }) {
   return (
     <div className="single-item">
       <input type="checkBox"
@@ -6,7 +6,7 @@ export function SingleItem({ item, onChangeStatus }) {
         onChange={() => onChangeStatus(item.id)}
       />
       <p style={{ textTransform: 'capitalize', textDecoration: item.completed && 'line-through' }} >{item.name}</p>
-      <button className='btn remove-btn'>delete</button>
+      <button onClick={() => onRemoveItem(item.id)} className='btn remove-btn'>delete</button>
     </div>
   )
 }

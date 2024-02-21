@@ -26,12 +26,19 @@ const App = () => {
       return item
     })
     setItems(newItems)
+    toast.success('item status changed')
+  }
+
+  function onRemoveItem(productId) {
+    const newItems = items.filter(item => item.id !== productId)
+    setItems(newItems)
+    toast.success('item deleted')
   }
 
   return (
     <section className='section-center'>
       <Form onAddItem={onAddItem} />
-      <ShoppingListItems items={items} onChangeStatus={onChangeStatus} />
+      <ShoppingListItems items={items} onChangeStatus={onChangeStatus} onRemoveItem={onRemoveItem} />
       <ToastContainer position='top-center' />
     </section>
   )
